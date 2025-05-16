@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travels life</title>
+    <link rel="icon" href="./files/logo.png">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+   
+</head>
+<body>
+
+<!-- Background Video & Header -->
+
+    <div class="banner">
+        <video src="./files/bgvid.mp4" type="video/mp4" autoplay muted loop></video>
+    
+    <!-- Header -->
+
+    <div class="content" id="home"> 
+        <nav>
+            <img src="./files/logo.png" class="logo" alt="Logo" title="Travels life">
+            
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Bosh sahisa</a>
+                    <a href="./index.html#locations">Joylar</a>
+                    <a href="./index.html#package">Paketlar</a>
+                    <a href="./services.html">Xizmatlar</a>
+                    <a href="./about.html">Biz haqimizda</a>
+                    <a href="./contact.html">Biz bilan bog'laning </a>
+                    <a href="./comments.html">Sharhlar</a>
+                </li>
+            </ul>
+        </nav>
+ 
+        <div class="title">
+            <h1>TRAVELS LIFE</h1>
+            <p>Sayohatingizni biz bilan rejalashtiring va eng hamyonbop paketlar bilan dunyo bo'ylab sayohat qiling!!</p>
+            <a href="./register.html" class="button">Hoziroq ro'yxatdan o'ting!</a>
+        </div>
+        </div>
+    </div>
+
+
+<!-- Xizmatlar Bo‘limi -->
+<section id="xizmatlar" style="background-color: #f4f8f7; padding: 60px 20px; font-family: 'Poppins', sans-serif;">
+  <style>
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .service-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #0f766e;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+    .service-btn:hover {
+      background-color: #115e59;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    @media (prefers-color-scheme: dark) {
+      section#xizmatlar {
+        background-color: #1f2937;
+      }
+      .service-card {
+        background: #374151;
+        color: white;
+      }
+      .modal-content {
+        background-color: #1e293b;
+        color: white;
+      }
+    }
+  </style>
+
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: 36px; color: #1e3a3a; margin-bottom: 40px; font-weight: 700;">Xizmatlarimiz</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+
+      <div class="service-card">
+        <h3>✈️ Aviachipta va mehmonxona bron qilish</h3>
+        <p>Arzon va qulay chiptalar hamda turli darajadagi mehmonxonalarni bron qilishda yordam beramiz.</p>
+        <a class="service-btn" onclick="openModal('avia')">Batafsil</a>
+      </div>
+
+      <div class="service-card">
+        <h3>🌍 Viza olishda ko‘mak</h3>
+        <p>Hujjatlar tayyorlashdan boshlab konsullik bilan ishlashgacha to‘liq yordam ko‘rsatamiz.</p>
+        <a class="service-btn" onclick="openModal('viza')">Batafsil</a>
+      </div>
+
+      <div class="service-card">
+        <h3>🏝 Tayyorgarlik ko‘rilgan tur paketlar</h3>
+        <p>Guruhli yoki individual ekskursiyalar, oilaviy va romantik sayohat paketlari.</p>
+        <a class="service-btn" onclick="openModal('tur')">Batafsil</a>
+      </div>
+
+      <div class="service-card">
+        <h3>🚗 Transfer va transport xizmatlari</h3>
+        <p>Aeroportdan mehmonxonagacha qulay va xavfsiz transport xizmatlari.</p>
+        <a class="service-btn" onclick="openModal('transfer')">Batafsil</a>
+      </div>
+
+      <div class="service-card">
+        <h3>📞 24/7 qo‘llab-quvvatlash</h3>
+        <p>Sayohat davomida har qanday savollarga javob beruvchi doimiy yordam xizmati.</p>
+        <a class="service-btn" onclick="openModal('support')">Batafsil</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-text">Ma'lumot yuklanmoqda...</div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalText = document.getElementById('modal-text');
+    function openModal(type) {
+      let content = {
+        avia: "Biz dunyo bo'ylab arzon va tezkor aviachipta hamda turar joy bron qilish xizmatlarini taklif qilamiz.",
+        viza: "Vizani rasmiylashtirish jarayonida sizni to'liq qo'llab-quvvatlaymiz, barcha hujjatlar ro'yxatini taqdim etamiz.",
+        tur: "Har xil byudjet va mavsumga mos tayyor tur paketlar mavjud. Oilaviy, guruhli va shaxsiy variantlar.",
+        transfer: "Aeroportdan mehmonxonagacha, shuningdek boshqa manzillarga shaxsiy haydovchi yoki mashina xizmati.",
+        support: "Biz bilan siz doimo aloqadasiz. Telegram, WhatsApp yoki telefon orqali tezkor yordam.",
+      };
+      modalText.innerText = content[type] || "Ma'lumot topilmadi.";
+      modal.style.display = "block";
+    }
+    function closeModal() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+</section>
+
+
+<!-- Axborot byulleteni -->
+
+<section class="newsletter">
+    <div class="newstext">
+        <h2>Axborot byulleteni</h2>
+        <p>Har hafta takliflar va so'nggi yangiliklarni olish uchun obuna bo'ling!</p>
+    </div>
+
+    <div class="send">
+        <form action="">
+            <input type="email" name="emailid" placeholder="E-mail" required>
+            <input type="submit" value="Obuna bo'ling">
+        </form>
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<section class="footer">
+    <div class="foot">
+        <div class="footer-content">
+            
+            <div class="footlinks">
+                <h4>Tez havolalar</h4>
+                <ul>
+                    <li><a href="./register.html">Ro'yxatdan o'tish</a></li>
+                    <li><a href="./about.html">Biz haqimizda</a></li>
+                    <li><a href="./contact.html">Biz bilan bog'laning</a></li>
+                </ul>
+            </div>
+
+            <div class="footlinks">
+                <h4>Aloqa</h4>
+                <div class="social">
+                    <a href="https://www.facebook.com/mohd.rahil.blogger" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/mohdrahil101" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://www.twitter.com/mohdrahil101" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.linkedin.com/in/mohdrahil101" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://www.youtube.com/techdollarz" target="_blank"><i class='bx bxl-youtube' ></i></a>
+                    <a href="https://www.mohdrahil.wordpress.com" target="_blank"><i class='bx bxl-wordpress' ></i></a>
+                    <a href="https://www.github.com/mohdrahil101" target="_blank"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="end">
+    </div>
+</section>
+
+
+ 
+</body>
+</html>
